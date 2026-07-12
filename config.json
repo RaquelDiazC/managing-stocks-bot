@@ -54,7 +54,18 @@
       "addr": "0x8c0800f0318b37de891352d17a0fac927886ffff"
     }
   ],
-  "wallets": [],
+  "wallets": [
+    { "name": "theo #1", "addr": "Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt" },
+    { "name": "Doji #2", "addr": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg" },
+    { "name": "Fox #3", "addr": "DAEdBmTPEKM6xkwfzC3d411QUe6coKpkND6UURa4CvHC" },
+    { "name": "LUKEY #4", "addr": "DjM7Tu7whh6P3pGVBfDzwXAx2zaw51GJWrJE3PwtuN7s" },
+    { "name": "Sheep #5", "addr": "78N177fzNJpp8pG49xDv1efYcTMSzo9tPTKEA9mAVkh2" },
+    { "name": "Pain #6", "addr": "J6TDXvarvpBdPXTaTU8eJbtso1PUCYKGkVtMKUUY8iEa" },
+    { "name": "Jeets #7", "addr": "D1H83ueSw5Nxy5okxH7VBfV4jRnqAK5Mm1tm3JAj3m5t" },
+    { "name": "Trey #8", "addr": "831yhv67QpKqLBJjbmw2xoDUeeFHGUx8RnuRj9imeoEs" },
+    { "name": "Megga #9", "addr": "H31vEBxSJk1nQdUN11qZgZyhScyShhscKhvhZZU3dQoU" },
+    { "name": "Felix #10", "addr": "3uz65G8e463MA5FxcSu1rTUyWRtrRLRZYskKtEHHj7qn" }
+  ],
   "_wallets_exemplo": "adicione traders com carteira Solana REAL (on-chain), ex: { \"name\": \"Pain\", \"addr\": \"J6TDXvarvpBdPXTaTU8eJbtso1PUCYKGkVtMKUUY8iEa\" } — o FOMO é custodial: o endereço de perfil do @PoorGoat_ não tem transações on-chain, então não é rastreável por nenhum bot",
   "siteCheck": "https://managing-stocks.app"
 }

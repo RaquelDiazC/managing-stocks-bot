@@ -166,7 +166,7 @@ async function main() {
       if (!lastSeen) { log('carteira ' + w.name + ': baseline registrada'); continue; }  // 1ª vez: só marca o ponto
       const novas = [];
       for (const s of sigs) { if (s.signature === lastSeen) break; novas.push(s); }
-      for (const s of novas.reverse().slice(-5)) {   // no máx 5 por ciclo (protege o RPC)
+      for (const s of novas.reverse().slice(-3)) {   // no máx 3 por carteira/ciclo (protege o RPC com 10 traders ativos)
         try {
           const tx = await rpc('getTransaction', [s.signature, { encoding: 'jsonParsed', maxSupportedTransactionVersion: 0, commitment: 'confirmed' }]);
           if (!tx || !tx.meta || s.err) continue;

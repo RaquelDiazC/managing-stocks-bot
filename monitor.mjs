@@ -157,6 +157,9 @@ async function main() {
   };
   const WSOL = 'So11111111111111111111111111111111111111112';
   state.wallSig = state.wallSig || {};
+  state.buys = (state.buys || []).filter(b => Date.now() - b.ts < 24 * 36e5);   // histórico de 24h p/ convergência + resumo
+  const CONV_WIN = 60 * 60e3;   // janela de convergência: 1h
+  const LIQ_RISK = cfg.rules.memeLiqMin || 20000;
   for (const w of (cfg.wallets || [])) {
     try {
       const sigs = (await rpc('getSignaturesForAddress', [w.addr, { limit: 15 }])) || [];
@@ -177,17 +180,70 @@ async function main() {
           const mints = Object.entries(delta).filter(([m, d]) => Math.abs(d) > 1e-9 && m !== WSOL).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]));
           if (!mints.length) continue;   // sem swap identificável → ignora (nada de "movimentou" genérico)
           const [mint, d] = mints[0];
-          let symTok = mint.slice(0, 6) + '…', usd = null;
+          let symTok = mint.slice(0, 6) + '…', usd = null, liq = null, rugTag = '';
           try {
             const ds = await (await fetch('https://api.dexscreener.com/latest/dex/tokens/' + mint)).json();
             const p = (ds.pairs || []).sort((a, b) => ((b.liquidity && b.liquidity.usd) || 0) - ((a.liquidity && a.liquidity.usd) || 0))[0];
-            if (p) { symTok = '$' + p.baseToken.symbol; usd = p.priceUsd ? Math.abs(d) * (+p.priceUsd) : null; }
+            if (p) {
+              symTok = '$' + p.baseToken.symbol;
+              usd = p.priceUsd ? Math.abs(d) * (+p.priceUsd) : null;
+              liq = (p.liquidity && p.liquidity.usd) || 0;
+              // #4 anti-rug no copy-trade: marca compra em token de liquidez baixa
+              if (d > 0 && liq > 0 && liq < LIQ_RISK) rugTag = ' ⚠️ liq $' + Math.round(liq / 1000) + 'K (risco)';
+            }
           } catch (e) {}
+          // #2 registra COMPRAS para detectar convergência (vários traders no mesmo token)
+          if (d > 0) state.buys.push({ mint, sym: symTok, name: w.name, ts: Date.now(), usd: usd || 0, liq: liq || 0 });
           if (usd != null && usd < WMIN) continue;   // abaixo do limiar → não notifica (corta a enxurrada)
-          pending.push('🐐 ' + w.name + ' ' + (d > 0 ? 'COMPROU' : 'VENDEU') + ' ' + symTok + (usd != null ? ' (~$' + usd.toLocaleString('en-US', { maximumFractionDigits: usd >= 100 ? 0 : 2 }) + ')' : '') + '\nsolscan.io/tx/' + s.signature);
+          pending.push('🐐 ' + w.name + ' ' + (d > 0 ? 'COMPROU' : 'VENDEU') + ' ' + symTok + (usd != null ? ' (~$' + usd.toLocaleString('en-US', { maximumFractionDigits: usd >= 100 ? 0 : 2 }) + ')' : '') + rugTag + '\nsolscan.io/tx/' + s.signature);
         } catch (e) { log('tx parse ' + w.name + ': ' + e.message); }
       }
     } catch (e) { log('carteira ' + w.name + ': ' + e.message); }
+  }
+
+  /* ── 2c. CONVERGÊNCIA: 2+ traders comprando o MESMO token em ≤1h (o sinal de ouro) ── */
+  const byMint = {};
+  for (const b of state.buys) { if (Date.now() - b.ts > CONV_WIN) continue; (byMint[b.mint] = byMint[b.mint] || []).push(b); }
+  for (const [mint, arr] of Object.entries(byMint)) {
+    const names = [...new Set(arr.map(b => b.name.replace(/ #\d+$/, '')))];
+    if (names.length >= (cfg.rules.convMin || 2)) {
+      const sym = arr[0].sym, totUsd = arr.reduce((s, b) => s + (b.usd || 0), 0);
+      maybe('conv:' + mint + ':' + names.length, '🔥🔥 CONVERGÊNCIA: ' + names.length + ' traders TOP compraram ' + sym + ' na última hora!\n(' + names.join(', ') + ')' + (totUsd ? ' · ~$' + Math.round(totUsd).toLocaleString('en-US') + ' no total' : '') + '\nsinal forte — mas confirme liquidez antes\ndexscreener.com/solana/' + mint);
+    }
+  }
+
+  /* ── 2d. RESUMO DIÁRIO (uma vez por dia, na janela configurada) ── */
+  const nowH = new Date().getUTCHours();
+  const today = new Date().toISOString().slice(0, 10);
+  if (nowH === (cfg.rules.digestHourUTC ?? 21) && state.lastDigest !== today) {
+    state.lastDigest = today;
+    const lines = ['📋 RESUMO DIÁRIO — Managing-Stocks', ''];
+    // top tokens comprados pelos traders nas últimas 24h
+    const agg = {};
+    for (const b of state.buys) { const k = b.mint; (agg[k] = agg[k] || { sym: b.sym, buyers: new Set(), usd: 0 }); agg[k].buyers.add(b.name.replace(/ #\d+$/, '')); agg[k].usd += b.usd || 0; }
+    const top = Object.values(agg).sort((a, b) => b.buyers.size - a.buyers.size || b.usd - a.usd).slice(0, 5);
+    lines.push('🐐 Mais comprados pelos seus traders (24h):');
+    if (top.length) for (const t of top) lines.push('  • ' + t.sym + ' — ' + t.buyers.size + ' trader(s)' + (t.usd ? ', ~$' + Math.round(t.usd).toLocaleString('en-US') : ''));
+    else lines.push('  (sem compras rastreadas nas últimas 24h)');
+    // memecoins que mais moveram
+    lines.push('', '🚀 Suas memecoins (24h):');
+    const movers = [];
+    for (const mc of allMemes) {
+      try {
+        const ds = await (await fetch('https://api.dexscreener.com/latest/dex/tokens/' + mc.addr)).json();
+        const p = (ds.pairs || []).sort((a, b) => ((b.liquidity && b.liquidity.usd) || 0) - ((a.liquidity && a.liquidity.usd) || 0))[0];
+        if (p && p.priceChange) movers.push({ sym: mc.sym, h24: +p.priceChange.h24 });
+      } catch (e) {}
+    }
+    movers.sort((a, b) => Math.abs(b.h24) - Math.abs(a.h24));
+    for (const m of movers.slice(0, 6)) lines.push('  • ' + m.sym + ' ' + (m.h24 >= 0 ? '▲ +' : '▼ ') + m.h24.toFixed(0) + '%');
+    // majors
+    lines.push('', '📊 Majors (24h):');
+    for (const sym of cfg.watch.slice(0, 4)) {
+      try { const t = await (await fetch(BINANCE + '/api/v3/ticker/24hr?symbol=' + sym)).json(); const c = +t.priceChangePercent; lines.push('  • ' + sym.replace('USDT', '') + ' ' + (c >= 0 ? '▲ +' : '▼ ') + c.toFixed(1) + '% · $' + fmt(+t.lastPrice)); } catch (e) {}
+    }
+    await sendTelegram(lines.join('\n'));
+    log('resumo diário enviado');
   }
 
   /* ── 3. saúde da plataforma ── */

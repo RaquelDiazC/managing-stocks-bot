@@ -144,6 +144,46 @@ async function main() {
     } catch (e) { log('erro meme ' + mc.sym + ': ' + e.message); }
   }
 
+  /* ── 2b. TRADERS SEGUIDOS (Solana on-chain): compra/venda de memecoin → Telegram ── */
+  const RPC = 'https://solana-rpc.publicnode.com';
+  const rpc = async (method, params) => {
+    const r = await fetch(RPC, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }) });
+    return (await r.json()).result;
+  };
+  const WSOL = 'So11111111111111111111111111111111111111112';
+  state.wallSig = state.wallSig || {};
+  for (const w of (cfg.wallets || [])) {
+    try {
+      const sigs = (await rpc('getSignaturesForAddress', [w.addr, { limit: 15 }])) || [];
+      if (!sigs.length) continue;
+      const lastSeen = state.wallSig[w.addr];
+      state.wallSig[w.addr] = sigs[0].signature;
+      if (!lastSeen) { log('carteira ' + w.name + ': baseline registrada'); continue; }  // 1ª vez: só marca o ponto
+      const novas = [];
+      for (const s of sigs) { if (s.signature === lastSeen) break; novas.push(s); }
+      for (const s of novas.reverse().slice(-5)) {   // no máx 5 por ciclo (protege o RPC)
+        try {
+          const tx = await rpc('getTransaction', [s.signature, { encoding: 'jsonParsed', maxSupportedTransactionVersion: 0, commitment: 'confirmed' }]);
+          if (!tx || !tx.meta || s.err) continue;
+          const delta = {};
+          for (const b of (tx.meta.postTokenBalances || [])) if (b.owner === w.addr) delta[b.mint] = (delta[b.mint] || 0) + (+b.uiTokenAmount.uiAmount || 0);
+          for (const b of (tx.meta.preTokenBalances || []))  if (b.owner === w.addr) delta[b.mint] = (delta[b.mint] || 0) - (+b.uiTokenAmount.uiAmount || 0);
+          const mints = Object.entries(delta).filter(([m, d]) => Math.abs(d) > 1e-9 && m !== WSOL).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]));
+          if (!mints.length) { pending.push('🐐 ' + w.name + ' movimentou on-chain (tx sem swap de token identificável)'); continue; }
+          const [mint, d] = mints[0];
+          let symTok = mint.slice(0, 6) + '…', usd = null;
+          try {
+            const ds = await (await fetch('https://api.dexscreener.com/latest/dex/tokens/' + mint)).json();
+            const p = (ds.pairs || []).sort((a, b) => ((b.liquidity && b.liquidity.usd) || 0) - ((a.liquidity && a.liquidity.usd) || 0))[0];
+            if (p) { symTok = '$' + p.baseToken.symbol; usd = p.priceUsd ? Math.abs(d) * (+p.priceUsd) : null; }
+          } catch (e) {}
+          pending.push('🐐 ' + w.name + ' ' + (d > 0 ? 'COMPROU' : 'VENDEU') + ' ' + symTok + (usd != null ? ' (~$' + usd.toLocaleString('en-US', { maximumFractionDigits: usd >= 100 ? 0 : 2 }) + ')' : '') + '\nsolscan.io/tx/' + s.signature);
+        } catch (e) { log('tx parse ' + w.name + ': ' + e.message); }
+      }
+    } catch (e) { log('carteira ' + w.name + ': ' + e.message); }
+  }
+
   /* ── 3. saúde da plataforma ── */
   if (cfg.siteCheck) {
     try {

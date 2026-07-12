@@ -125,8 +125,12 @@ async function main() {
     } catch (e) { log('erro ' + sym + ': ' + e.message); }
   }
 
-  /* ── 2. MEMECOINS (DexScreener): movimento forte + guarda anti-rug ── */
-  for (const mc of (cfg.memecoins || [])) {
+  /* ── 2. MEMECOINS (DexScreener): fixas do config + as que você adiciona no app (coins.json, sincronizado) ── */
+  let extra = [];
+  try { if (existsSync('./coins.json')) extra = JSON.parse(readFileSync('./coins.json', 'utf8')); } catch (e) {}
+  const seenAddr = new Set();
+  const allMemes = [...(cfg.memecoins || []), ...extra].filter(m => m && m.addr && !seenAddr.has(m.addr.toLowerCase()) && seenAddr.add(m.addr.toLowerCase()));
+  for (const mc of allMemes) {
     try {
       const ds = await (await fetch('https://api.dexscreener.com/latest/dex/tokens/' + mc.addr)).json();
       const p = (ds.pairs || []).sort((a, b) => ((b.liquidity && b.liquidity.usd) || 0) - ((a.liquidity && a.liquidity.usd) || 0))[0];

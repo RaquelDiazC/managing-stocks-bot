@@ -1,0 +1,35 @@
+name: managing-stocks-bot
+on:
+  schedule:
+    - cron: '*/10 * * * *'   # a cada ~10 min (o GitHub pode atrasar alguns minutos em horários de pico)
+  workflow_dispatch: {}       # botão "Run workflow" para disparar na hora
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bot
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: rodar monitor
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node monitor.mjs
+      - name: persistir estado (cooldowns/dedupe entre execuções)
+        run: |
+          git config user.name "bot"
+          git config user.email "bot@users.noreply.github.com"
+          git pull --rebase --autostash || true
+          git add state.json
+          git diff --cached --quiet || git commit -m "state [skip ci]"
+          git push || true

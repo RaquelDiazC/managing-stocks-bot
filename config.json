@@ -1,0 +1,26 @@
+{
+  "_ajuda": "watch: pares Binance (preço/RSI/sinais MACD+HiLo) · move24hPct: alerta se 24h passar disso · rsiLow/rsiHigh: zonas do RSI(1h) · priceAlerts: gatilhos de preço · memecoins: vigiadas via DexScreener (meme1hPct/meme24hPct = movimento forte; memeLiqMin = guarda anti-rug) · cooldownHours: não repete o mesmo alerta antes disso · siteCheck: avisa se a plataforma cair",
+  "watch": ["BTCUSDT", "ETHUSDT", "SOLUSDT", "XRPUSDT", "XLMUSDT", "DOGEUSDT"],
+  "rules": {
+    "move24hPct": 5,
+    "rsiLow": 30,
+    "rsiHigh": 70,
+    "meme1hPct": 10,
+    "meme24hPct": 25,
+    "memeLiqMin": 20000,
+    "cooldownHours": 6,
+    "priceAlerts": [
+      { "symbol": "BTCUSDT", "below": 58000, "_nota": "suporte 7d do BTC" },
+      { "symbol": "ETHUSDT", "below": 1550 }
+    ]
+  },
+  "memecoins": [
+    { "sym": "CHANCE", "addr": "JCKwsT8UAbygnFkZ7u3amDUM7BXRtwUhCsHQv2khpump" },
+    { "sym": "RETARD", "addr": "2q68mqEbjwmnMjs1o3KZDNZVyMv6RZKkHcm64iinpump" },
+    { "sym": "TCC", "addr": "0xa4390b901a63641c92327e5793b45fcb46954444" },
+    { "sym": "ANSEM", "addr": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump" },
+    { "sym": "BINANCIAN", "addr": "0xafcbc8dc616d6c94118e62c8f3fe8d774f354444" },
+    { "sym": "CZ", "addr": "0x8c0800f0318b37de891352d17a0fac927886ffff" }
+  ],
+  "siteCheck": "https://managing-stocks.app"
+}

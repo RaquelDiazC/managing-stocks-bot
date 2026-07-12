@@ -165,16 +165,17 @@ async function main() {
       state.wallSig[w.addr] = sigs[0].signature;
       if (!lastSeen) { log('carteira ' + w.name + ': baseline registrada'); continue; }  // 1ª vez: só marca o ponto
       const novas = [];
-      for (const s of sigs) { if (s.signature === lastSeen) break; novas.push(s); }
+      for (const s of sigs) { if (s.signature === lastSeen) break; if (!s.err) novas.push(s); }   // ignora txs que falharam (spam de bots)
+      const WMIN = cfg.rules.walletMinUsd || 500;
       for (const s of novas.reverse().slice(-3)) {   // no máx 3 por carteira/ciclo (protege o RPC com 10 traders ativos)
         try {
           const tx = await rpc('getTransaction', [s.signature, { encoding: 'jsonParsed', maxSupportedTransactionVersion: 0, commitment: 'confirmed' }]);
-          if (!tx || !tx.meta || s.err) continue;
+          if (!tx || !tx.meta) continue;
           const delta = {};
           for (const b of (tx.meta.postTokenBalances || [])) if (b.owner === w.addr) delta[b.mint] = (delta[b.mint] || 0) + (+b.uiTokenAmount.uiAmount || 0);
           for (const b of (tx.meta.preTokenBalances || []))  if (b.owner === w.addr) delta[b.mint] = (delta[b.mint] || 0) - (+b.uiTokenAmount.uiAmount || 0);
           const mints = Object.entries(delta).filter(([m, d]) => Math.abs(d) > 1e-9 && m !== WSOL).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]));
-          if (!mints.length) { pending.push('🐐 ' + w.name + ' movimentou on-chain (tx sem swap de token identificável)'); continue; }
+          if (!mints.length) continue;   // sem swap identificável → ignora (nada de "movimentou" genérico)
           const [mint, d] = mints[0];
           let symTok = mint.slice(0, 6) + '…', usd = null;
           try {
@@ -182,6 +183,7 @@ async function main() {
             const p = (ds.pairs || []).sort((a, b) => ((b.liquidity && b.liquidity.usd) || 0) - ((a.liquidity && a.liquidity.usd) || 0))[0];
             if (p) { symTok = '$' + p.baseToken.symbol; usd = p.priceUsd ? Math.abs(d) * (+p.priceUsd) : null; }
           } catch (e) {}
+          if (usd != null && usd < WMIN) continue;   // abaixo do limiar → não notifica (corta a enxurrada)
           pending.push('🐐 ' + w.name + ' ' + (d > 0 ? 'COMPROU' : 'VENDEU') + ' ' + symTok + (usd != null ? ' (~$' + usd.toLocaleString('en-US', { maximumFractionDigits: usd >= 100 ? 0 : 2 }) + ')' : '') + '\nsolscan.io/tx/' + s.signature);
         } catch (e) { log('tx parse ' + w.name + ': ' + e.message); }
       }

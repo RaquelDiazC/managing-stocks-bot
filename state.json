@@ -40,7 +40,7 @@
     "m24:HEDGE:u": 1786568206440,
     "macdsig:XLMUSDT:1783951200000": 1783956507292,
     "macdsig:DOGEUSDT:1783951200000": 1783956507591,
-    "rsi:XRPUSDT:low": 1786461031909,
+    "rsi:XRPUSDT:low": 1786748983472,
     "rsi:DOGEUSDT:low": 1786573295679,
     "m1h:CZ:d": 1785757067100,
     "m24:CHANCE:d": 1786743278451,
@@ -787,7 +787,7 @@
     "BTCUSDT": "mid",
     "ETHUSDT": "mid",
     "SOLUSDT": "mid",
-    "XRPUSDT": "mid",
+    "XRPUSDT": "low",
     "XLMUSDT": "mid",
     "DOGEUSDT": "mid"
   },
@@ -807,66 +807,18 @@
   },
   "siteDown": false,
   "wallSig": {
-    "Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt": "CBNXpZMaTxYmhPPvKhgCVvjqUAVWu9uZvPDEsygNQpyiDpF64euthBGSkoHtaAWMuEmFCFkwF31muVXP9EqaJV5",
+    "Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt": "UwiQXpmJcKy7gWfkCeWaJdriQZes71yVtqD9mZGnC6vC3A2CUgw15UDcY5XFK4dLrYGf6rxMjL2K6SAWQjc7eQ4",
     "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg": "2xLjiNJkY1UFF5tRZchSr3KFi9v6D5jwPvCr54o6t6Sfv44uX11KjD1TfGKjJ4umdVd9SDKpVfbuqajo1Bc2TAwE",
-    "DAEdBmTPEKM6xkwfzC3d411QUe6coKpkND6UURa4CvHC": "hXvuDgFgJ5WyTUj7EAkaaDD9H7PmDYwuBtj5Y8TA62MMU4RsSdH3zDC3GaMGBS4gtgKn2z6BBpVMa2uNae14gUF",
+    "DAEdBmTPEKM6xkwfzC3d411QUe6coKpkND6UURa4CvHC": "d3ntQFGwSwWUYhh7Xct2cTeNi2ZheMNFXdMSSikJ3hVX4Ce16MtXdcUHY1ziUwKx9aKSqTpp15dNwABc3We8vJm",
     "DjM7Tu7whh6P3pGVBfDzwXAx2zaw51GJWrJE3PwtuN7s": "2kkABeZyt7Un4uBGY8kRR51ABg7NVNQBySBre96mj8ovsSKSpt3cHEX56dVpWA1SeWQ5dUhe6WhLSF1u8VqCLBC2",
-    "78N177fzNJpp8pG49xDv1efYcTMSzo9tPTKEA9mAVkh2": "3j35w9wpyM83PtGjK9Y9NUaUZWV3tvZuaz2gF6nNBPW3iZucgWfUe7xPpfCmAxgUBUpMVWPTVs7AuPQ2YRPcC7gq",
-    "J6TDXvarvpBdPXTaTU8eJbtso1PUCYKGkVtMKUUY8iEa": "wQKjw6K27Lc17armpNMScbVPFnyw425VuobPGBFnsqshefVzMMgRov7xMKZZCbWT8MuEY1gbsHHLQLw5XA1DWuf",
+    "78N177fzNJpp8pG49xDv1efYcTMSzo9tPTKEA9mAVkh2": "4NnY3McxYd5PQUX3cGiYmAXeb1diGrrWCauo4s7vH43PGNyKJzwKLsBHC31BZ7SEN7qRQe35N1iK7ApyAmekDuoZ",
+    "J6TDXvarvpBdPXTaTU8eJbtso1PUCYKGkVtMKUUY8iEa": "Kuvv9S7wZ157h5kwdJdpRzm4TG7FU6QY6SosDwDGpS6pHdnwMbgQLmDBEmHdsvx1AwRDVqzzm5ydeJV87q7HtJg",
     "D1H83ueSw5Nxy5okxH7VBfV4jRnqAK5Mm1tm3JAj3m5t": "yMDunvx8ZTFQsNMEfkEaHBnGGPVVS9vZ8Mk9PvTuS4gwuniEq4Uc95kcXgwuepZUDn9PKQxYHXFtRddPAB4Fvax",
-    "831yhv67QpKqLBJjbmw2xoDUeeFHGUx8RnuRj9imeoEs": "5vepzgsvNrzkdFVzq4vYQnftXrVf4tGNw15jVjGDp7WvcGjhUZZEpPaD2Jfberz2NbGFmrsGzbXHJBNj1x6ak7xR",
+    "831yhv67QpKqLBJjbmw2xoDUeeFHGUx8RnuRj9imeoEs": "3PuN9TBvE5TwsscgDuEEwDsq9cFWxvQC7jDomWxjaZXTBjDYcXDoCLHGL4YeSufwMjpxodmok74h38fBQBPAaxSk",
     "H31vEBxSJk1nQdUN11qZgZyhScyShhscKhvhZZU3dQoU": "59tnLWqgPpxVkCt75NvjF8mxv6eZ4SfqL9tPfDePRkXe8h4CfV9CkAa4j2QFfE1KGso7krqH96GBfWG5iku5vvQP",
     "3uz65G8e463MA5FxcSu1rTUyWRtrRLRZYskKtEHHj7qn": "3MN7jwLr54BGhfjtivNJH6FYU2xeWgq22vSXLGRPV6wk2FfV6VH6MySJs24QAiZbRBuVyCZ2vc3RHWoSNqdDDmYw"
   },
   "buys": [
-    {
-      "mint": "GRehQKv9E3fVuNJGQTwAAjYpcixRCYKkzAXAb5kGpump",
-      "sym": "$BOIÚNA",
-      "name": "Doji #2",
-      "ts": 1786662504637,
-      "usd": 72.20727945171159,
-      "liq": 39513.97
-    },
-    {
-      "mint": "GRehQKv9E3fVuNJGQTwAAjYpcixRCYKkzAXAb5kGpump",
-      "sym": "$BOIÚNA",
-      "name": "Doji #2",
-      "ts": 1786662504778,
-      "usd": 35.90572681510074,
-      "liq": 39513.97
-    },
-    {
-      "mint": "GRehQKv9E3fVuNJGQTwAAjYpcixRCYKkzAXAb5kGpump",
-      "sym": "$BOIÚNA",
-      "name": "Doji #2",
-      "ts": 1786662504951,
-      "usd": 71.03501310308926,
-      "liq": 39513.97
-    },
-    {
-      "mint": "7CCpNv6nM66GvTbAv52tbktCTqjLYcFdo2CVweWXpump",
-      "sym": "$SOL",
-      "name": "Fox #3",
-      "ts": 1786662505198,
-      "usd": 0.06983905068672,
-      "liq": 1398.54
-    },
-    {
-      "mint": "5hkn9ehqjar5io4FD4w6DBBwYrBwMoaXDBG1H3vmpump",
-      "sym": "$BULL",
-      "name": "Fox #3",
-      "ts": 1786662505354,
-      "usd": 0.00015108601108000002,
-      "liq": 1420.56
-    },
-    {
-      "mint": "5hkn9ehqjar5io4FD4w6DBBwYrBwMoaXDBG1H3vmpump",
-      "sym": "$BULL",
-      "name": "Fox #3",
-      "ts": 1786662505456,
-      "usd": 0.00024479442761,
-      "liq": 1420.56
-    },
     {
       "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
       "sym": "$TRUMP",

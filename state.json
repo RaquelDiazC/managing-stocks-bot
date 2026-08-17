@@ -100,7 +100,7 @@
     "conv:8wTmRmVZyzMA3Sh1iax34Pq9sZ2AUYkQkhizcRsApump:2": 1784313755722,
     "conv:BxUraJVRwXdWsvbqkc8CJ6LPKGyDbaTorN7KJtpxpump:2": 1784317673200,
     "conv:6SPAfMJBvxYauknT8JFAL7VoPcsn7xPmodB6BymApump:2": 1784323617190,
-    "conv:EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v:2": 1786944257015,
+    "conv:EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v:2": 1786997544110,
     "macdsig:XLMUSDT:1784379600000": 1784385551524,
     "hilosig:XLMUSDT:1784383200000": 1784388852657,
     "hilosig:XRPUSDT:1784390400000": 1784396125622,
@@ -931,7 +931,8 @@
     "conv:RmtMAYVTTFv2iK9muMrXEoAnSSsZPPgRPbqZCKwNDYk:2": 1786983148249,
     "conv:BiGMHReTjLK1yqb1v8KUFANQbnJyh9fwYfv21MUwpump:3": 1786983148249,
     "conv:ybNYvzzt1V5HCUXU69Hx76p8EJ1x8E3wsSFekfmpump:2": 1786985151984,
-    "conv:BesPZ226kzZrPsqvjWkWvyh4yzUbTPzgxuzyd72Npump:2": 1786995372829
+    "conv:BesPZ226kzZrPsqvjWkWvyh4yzUbTPzgxuzyd72Npump:2": 1786995372829,
+    "macdsig:XLMUSDT:1786993200000": 1786997542717
   },
   "rsiZone": {
     "BTCUSDT": "high",
@@ -944,7 +945,7 @@
   "sigSeen": {
     "macd:SOLUSDT": 1786478400000,
     "macd:XRPUSDT": 1786892400000,
-    "macd:XLMUSDT": 1786932000000,
+    "macd:XLMUSDT": 1786993200000,
     "macd:DOGEUSDT": 1786719600000,
     "hilo:ETHUSDT": 1786928400000,
     "hilo:XLMUSDT": 1786932000000,
@@ -957,34 +958,18 @@
   },
   "siteDown": false,
   "wallSig": {
-    "Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt": "217Uq4f3WyY31LBWsgYoB6V5p4KCFmeZ8mbKnFy2DD4CWDdvJcHdPYwmr4ymZZUFzcXEUzn56TCp9PkwavTmSUjD",
+    "Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt": "5Hz8G7doYRST64qP7RLurocrDYi3LiTZAnLRCte54jcMnBNgayaZWZiHvdjojsAWeTG6MMJgTiPTKRG8bgPi6fJ6",
     "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg": "4f2B7fSiLh2aT2jRNXb12My8r6JUBi52XB4eM7vKS7iVoBbnZLGzrt1UJTBXvmnd7JUej6ZwDEcL7LpxM1Twa4X8",
-    "DAEdBmTPEKM6xkwfzC3d411QUe6coKpkND6UURa4CvHC": "3EFRAVcy3ZqmCfJ2E42Vd5WyAKL2EirkjKxH3EYWgsemsdMhTSPCHNVDdxWYFhB3hbwwsD9PjstTJGxJSTpGGU3f",
+    "DAEdBmTPEKM6xkwfzC3d411QUe6coKpkND6UURa4CvHC": "54nNfPyBnRiSnyX7p5kqRfr2W4uu3e2etGKqFBBDPTD3RJic3gvfCsSimLYAjqY3c7CLfiJq7sbo82d15wMdab4c",
     "DjM7Tu7whh6P3pGVBfDzwXAx2zaw51GJWrJE3PwtuN7s": "3tNvMEGMXq3HRCTjAErSF6HcRehi2k7Gi3C9DnvfuDERbA32WnrjbmqwxsfmYs27TMGKuEZG24MGbc75fhYZvjsb",
-    "78N177fzNJpp8pG49xDv1efYcTMSzo9tPTKEA9mAVkh2": "Jf9YtES7mUinPsyrh9ijydzwLtDCLrQg4gcGw77X1y887ZjNKgU2MymviZgyNKJEmEpvLBzdouBCXVK4S9EmkVv",
-    "J6TDXvarvpBdPXTaTU8eJbtso1PUCYKGkVtMKUUY8iEa": "4jn9BeRaFFr83YrQByH5nsXRafGhGh3m4PFoJWstAKJTqw8DfoDubQqSvti6CG2kawzB4FDYu4dTsvZ3xjZjsfFQ",
-    "D1H83ueSw5Nxy5okxH7VBfV4jRnqAK5Mm1tm3JAj3m5t": "4XKtVkcwmKAvQA8VFA5HtaPyCt774Q6RYTHtwNbyq43XpcDtrUVqA4MYkGwfxCzv2yqcqxeCbqAUBKtA9AoH6uTG",
-    "831yhv67QpKqLBJjbmw2xoDUeeFHGUx8RnuRj9imeoEs": "45kp233NKgh7bCkHMXXkhdzKm4up9RdFWdELidcrWN1ZcVq9a631dGy9dxhkoi6kSmKyvkh5Ge3488x1m6hUrTfm",
-    "H31vEBxSJk1nQdUN11qZgZyhScyShhscKhvhZZU3dQoU": "54EiFk2aHKy8TYAzXmF52VFH6en3Rh4XDJv8ZMZuad3ApEVmbvscbTtXjvUwfmzuMkxbWX4ESgBXCqvunF5YNxW3",
+    "78N177fzNJpp8pG49xDv1efYcTMSzo9tPTKEA9mAVkh2": "3CbMLRJh1izbRz7QXX1UPDUV61u89mV7P1mHkpdhz6MYtmBwXBGxX95vD4UQp6kzgnzzcfTndJAirwTExRq9TEmo",
+    "J6TDXvarvpBdPXTaTU8eJbtso1PUCYKGkVtMKUUY8iEa": "51fraZ77151C5xt1x7opBjaWdKb4KQVjZij52oZ8ugkJNHMxKk7BThCen7mMdhR9fkb3L7n8AB1WEUVkSyEHcbU7",
+    "D1H83ueSw5Nxy5okxH7VBfV4jRnqAK5Mm1tm3JAj3m5t": "3bTCUBHe2LBMyBeqdKZ7CWSPdYxmGxA2KXNpzkPZMPCXhB4aa7pZRAtm1EFb2xBkQGo46MN1SuZo2KPLoEz6YrX",
+    "831yhv67QpKqLBJjbmw2xoDUeeFHGUx8RnuRj9imeoEs": "dUmAnkjtuqhkjCqxBGyiCTbLwNYyjWSMMshLouV5NXViPqNDu4MB2e8iVLaKGy1JnwZVWWi1GcNtvVezgXKPHKa",
+    "H31vEBxSJk1nQdUN11qZgZyhScyShhscKhvhZZU3dQoU": "5egjiZ8PLkKdNEpQjpxaCtYWxGe9SUwVVxqcLSCuSSqREjg5GDD3nHmKTj3dgLAV5iXNxUYsLAkAGn8Ji8yTtJNF",
     "3uz65G8e463MA5FxcSu1rTUyWRtrRLRZYskKtEHHj7qn": "5VPzpoe4ruZf6tY55Df6E699zKQ6YK2dfjHQhU3ufRhfa2KAWxQr5zpwtzdT3ANjPmYjf3tV79yen9HKyg23coGs"
   },
   "buys": [
-    {
-      "mint": "B77seMgJQrQTmDdFsHwyfHyewmRQbfTAsZCmXxMBpump",
-      "sym": "$memecoin",
-      "name": "Sheep #5",
-      "ts": 1786910292188,
-      "usd": 16.103771886471026,
-      "liq": 6887.76
-    },
-    {
-      "mint": "B77seMgJQrQTmDdFsHwyfHyewmRQbfTAsZCmXxMBpump",
-      "sym": "$memecoin",
-      "name": "Sheep #5",
-      "ts": 1786910292479,
-      "usd": 24.336188298529727,
-      "liq": 6887.76
-    },
     {
       "mint": "99mSLy6uTshDwmPL3LGEhNqDzoRPmtoUzxAU8Zsjpump",
       "sym": "$Aliens",
@@ -3376,6 +3361,70 @@
       "ts": 1786996478398,
       "usd": 126.09266812764704,
       "liq": 4362.4
+    },
+    {
+      "mint": "RmtMAYVTTFv2iK9muMrXEoAnSSsZPPgRPbqZCKwNDYk",
+      "sym": "$EYE",
+      "name": "Sheep #5",
+      "ts": 1786997543757,
+      "usd": 236.48868992257,
+      "liq": 351495.52
+    },
+    {
+      "mint": "RmtMAYVTTFv2iK9muMrXEoAnSSsZPPgRPbqZCKwNDYk",
+      "sym": "$EYE",
+      "name": "Sheep #5",
+      "ts": 1786997543787,
+      "usd": 241.86299519923986,
+      "liq": 351495.52
+    },
+    {
+      "mint": "RmtMAYVTTFv2iK9muMrXEoAnSSsZPPgRPbqZCKwNDYk",
+      "sym": "$EYE",
+      "name": "Sheep #5",
+      "ts": 1786997543819,
+      "usd": 243.09480491628034,
+      "liq": 351495.52
+    },
+    {
+      "mint": "8hnH2T9kyP1T7atjqmvEdXPNBGc8JkD3vq4aEQZDpump",
+      "sym": "$Seth",
+      "name": "Pain #6",
+      "ts": 1786997543867,
+      "usd": 1027.9874486307988,
+      "liq": 10271.7
+    },
+    {
+      "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "sym": "$TRUMP",
+      "name": "Pain #6",
+      "ts": 1786997543937,
+      "usd": 0.00139,
+      "liq": 24435968.19
+    },
+    {
+      "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "sym": "$TRUMP",
+      "name": "Jeets #7",
+      "ts": 1786997543981,
+      "usd": 0.00013899999996510814,
+      "liq": 24435968.19
+    },
+    {
+      "mint": "zj1jpp7QMveWHLs61vL9KMZf254KvW7j4AAmBF8ry2k",
+      "sym": "$BULLSHIT",
+      "name": "Jeets #7",
+      "ts": 1786997544011,
+      "usd": 368.42844378903175,
+      "liq": 74634.1
+    },
+    {
+      "mint": "zj1jpp7QMveWHLs61vL9KMZf254KvW7j4AAmBF8ry2k",
+      "sym": "$BULLSHIT",
+      "name": "Jeets #7",
+      "ts": 1786997544040,
+      "usd": 379.658283974589,
+      "liq": 74634.1
     }
   ],
   "lastDigest": "2026-08-16"

@@ -2,7 +2,7 @@
   "alerts": {
     "m24:RETARD:d": 1788829944851,
     "m24:BINANCIAN:d": 1788306204437,
-    "m24:TCC:d": 1788878680364,
+    "m24:TCC:d": 1788978640584,
     "m24:CHANCE:u": 1788847135690,
     "m24:CZ:d": 1788814629198,
     "m1h:TCC:u": 1788630183446,
@@ -25,7 +25,7 @@
     "hilosig:XLMUSDT:1783868400000": 1783874115703,
     "m1h:HEDGE:d": 1787863164164,
     "m1h:RETARD:u": 1788916614011,
-    "m24:RETARD:u": 1788878680233,
+    "m24:RETARD:u": 1788978640438,
     "hilosig:BTCUSDT:1783882800000": 1783888046620,
     "hilosig:SOLUSDT:1783882800000": 1783888047175,
     "m1h:CHANCE:u": 1788204966899,
@@ -1744,7 +1744,10 @@
     "conv:9CcfzUqpc3MUWT7bfMgVX3eXsLitPwiaqhSVd9Z2pump:5": 1788966439297,
     "conv:2f2fNPncdHw4GPYsH19bYCnNNHUeuVoFkabY82t1pump:3": 1788966439297,
     "conv:R8HSoHoRmRgo5NfxoFqAtTcLxhJaRoVcmRqwQv1pump:5": 1788966439297,
-    "conv:94RP3SHoqo65NKqhxhoQMSuqLkBbEttSsMWB5qJWpump:4": 1788966439297
+    "conv:94RP3SHoqo65NKqhxhoQMSuqLkBbEttSsMWB5qJWpump:4": 1788966439297,
+    "conv:Ay5PeSxmDjtRLDFRMPXXZSzddxNY2LWL89U96Dhhpump:7": 1788978645778,
+    "conv:41QcW5nWZiLnLQWzwUTpH8hLmH899DcfCLj6MGJYpump:4": 1788978645778,
+    "conv:A5ZnCvZDeNdBoRgV8iw5fkuQBQuqNiwseiZoFvScpump:2": 1788978645778
   },
   "rsiZone": {
     "BTCUSDT": "mid",
@@ -1770,154 +1773,18 @@
   },
   "siteDown": false,
   "wallSig": {
-    "Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt": "4ddYR8wryrYvzjghfSZ3sC23kLuigp9vjHmrLMiorTD5rBeDSggpvwCvb4z8hqG2gTYMDTWZAGeAcnxbafLLZtDE",
-    "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg": "33Ki4sgxQdSKymP7z6VBVyBFw413caRNJron7sdG4CSR37wbkZTyUi3aM9mbP2YwuUAqtA8PsKf4Crz4h97DWaZU",
-    "DAEdBmTPEKM6xkwfzC3d411QUe6coKpkND6UURa4CvHC": "5qdLCitnQXKwpu6HMt2t9G7XmFxHa2irdTgPVPoj1WwCFfyqNQvaoq4HVmZwRFpZGaNEMtgbLUrvrGLb8tHUkHTz",
-    "DjM7Tu7whh6P3pGVBfDzwXAx2zaw51GJWrJE3PwtuN7s": "4izcDPKcp72Y47TBq3TSkLz1Un7HGFQyFVhCYB6dd2uJKjhmgugDnS8b9J3h5U1kCb23vpGEdSjGhGTrfjt8962B",
-    "78N177fzNJpp8pG49xDv1efYcTMSzo9tPTKEA9mAVkh2": "281SyTKfEqGtFSU7KNREBDxvZfP2cZRtaTn6wKX92KATBehLmg9pEutUuRQ5b2dsxac5YurmEksub8CgxshNtARK",
-    "J6TDXvarvpBdPXTaTU8eJbtso1PUCYKGkVtMKUUY8iEa": "5no99P8oJfqDMKW2s6LdqtR2bPggpgkULKEpNHj3J9TwSwcHWTsZ9ge1KnkzXp6ahHkPRdjxu1mdxQpNR3wXVnKc",
-    "D1H83ueSw5Nxy5okxH7VBfV4jRnqAK5Mm1tm3JAj3m5t": "3NfNcBw2gHCP3xkes4WnaaTHC7YLNPX1x9wUt779ipfTqo1qCSGc9i3n3KEJfNsgPwceFS3dRCFL8BEHo7yuVAMW",
-    "831yhv67QpKqLBJjbmw2xoDUeeFHGUx8RnuRj9imeoEs": "5foHsK3iRbs7iNRhUbDyDhTf92mXN7HUTsjPDyftBdXs7D62ZeByyM1ifenxR2RE7YQnhPa1WHexubTexAMCd64M",
-    "H31vEBxSJk1nQdUN11qZgZyhScyShhscKhvhZZU3dQoU": "1Jj4v7YEC9YYyCFcYF51MiBTCBzPWkcAqTGGzCcBkfBxu5LwWmrTK7vxQCJdsGUaxSB9Y78pqLkgAqiPqNDqEj",
-    "3uz65G8e463MA5FxcSu1rTUyWRtrRLRZYskKtEHHj7qn": "3iFxStUCbVBXkZZXZGb5fBErrf1oU7qFr9X9cs2rUYgMMeUnivWoTWnBEYEbz7dwkUKnUiaDQorvyNUJxf6i4QCd"
+    "Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt": "4oEuKAZEf3bDowyxnyFFf7EKzKoSrf56365y7XKqzJq6z2JDwUGcY9PBCWvzX4szJLxjD3pLyZwYHnMcfWXXD8BD",
+    "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg": "4Kybjc69JPEujgMvDSa93s8EsVY8ZDKCdS7o2TRwB1VKjXNvZV1P1cPvEZZLfidi3SejRT77Jsrtdab3Uqiwqk9g",
+    "DAEdBmTPEKM6xkwfzC3d411QUe6coKpkND6UURa4CvHC": "GTacjDPvvEookwvPEMk8EQEJ9CQH9yhRVvypCp4tTrga4FDTtXEraYvb2TANcvUjwMquJZHAQkpKgpA8LtUbFTB",
+    "DjM7Tu7whh6P3pGVBfDzwXAx2zaw51GJWrJE3PwtuN7s": "2LTy5F4pavkwfUcutyhEEoutY3jK2RGssndLtJQYVuFpbPDuyaAKmuqUGJ44NDBReESeJqys4wQ92mcpDZ6CXUfX",
+    "78N177fzNJpp8pG49xDv1efYcTMSzo9tPTKEA9mAVkh2": "3bUYC8xX4F4QHZWxNABtqcNW6kZLAegXkgt8CJvq5xxtenosAj1z1tJNuYUogQxsgsj7dbq6ot12GQpzCQXDbszA",
+    "J6TDXvarvpBdPXTaTU8eJbtso1PUCYKGkVtMKUUY8iEa": "DMufTZPk24Y64bfqVnvxxjz4AmvautYx1xoemoxCEEokj4E1VpMkCPKUhfjBWHJV32FNWkpuWpVWUkhVXG8bSq1",
+    "D1H83ueSw5Nxy5okxH7VBfV4jRnqAK5Mm1tm3JAj3m5t": "5yZuTfyxUA1vc6e7TgMaMAQzaMNezjCXwc8Mj5yU9ktpidPJ9JDSnq6b31BPYDsUGyj5tXE7c3QbsMQjGZaHCrdc",
+    "831yhv67QpKqLBJjbmw2xoDUeeFHGUx8RnuRj9imeoEs": "4mc2sCuAxPk8C9QSf71NbKofD8dKRmV53cwFJToFG5TzGbGViZTNvyd8JYNRYnsG8WE6z3LhANzJub53TPxN4ExF",
+    "H31vEBxSJk1nQdUN11qZgZyhScyShhscKhvhZZU3dQoU": "25jTTCpnNbpot47DKZzhwBDtip52HpPjCfFoN3ERLaZVzQpMyvPokC7PcRHgfnVvLBW3JmfZb9R974jeivSLWYGf",
+    "3uz65G8e463MA5FxcSu1rTUyWRtrRLRZYskKtEHHj7qn": "5m1TgyGF2vvemr1zQAJWaERNCapV453MFkTA7CjxoyCf13xzmY7c5imxsiXgKCDzS3r8N7zUSijdUpc85YqjyYVp"
   },
   "buys": [
-    {
-      "mint": "APEHe7jmvva4W9xwR8jDnTqAfMPu7kFJ3UEEuFYjJSgY",
-      "sym": "$ZAPE",
-      "name": "Fox #3",
-      "ts": 1788890778654,
-      "usd": 0.000021210000000000002,
-      "liq": 2163.06
-    },
-    {
-      "mint": "7yuo3rN4f8ZqeSosyMfpSvxNRbEpWywr1QeNaKCXpump",
-      "sym": "$unshdc",
-      "name": "Fox #3",
-      "ts": 1788890778777,
-      "usd": 0.00000217,
-      "liq": 2356.89
-    },
-    {
-      "mint": "AoqBvbEFvjULnW1PyFUeJngYjUstj27sGp4T4Jc4pump",
-      "sym": "$SNAPCAT",
-      "name": "Fox #3",
-      "ts": 1788890778897,
-      "usd": 0.000015666,
-      "liq": 2227.98
-    },
-    {
-      "mint": "APEHe7jmvva4W9xwR8jDnTqAfMPu7kFJ3UEEuFYjJSgY",
-      "sym": "$ZAPE",
-      "name": "LUKEY #4",
-      "ts": 1788890779145,
-      "usd": 0.000021210000000000002,
-      "liq": 2163.06
-    },
-    {
-      "mint": "7yuo3rN4f8ZqeSosyMfpSvxNRbEpWywr1QeNaKCXpump",
-      "sym": "$unshdc",
-      "name": "LUKEY #4",
-      "ts": 1788890779272,
-      "usd": 0.00000217,
-      "liq": 2356.89
-    },
-    {
-      "mint": "AoqBvbEFvjULnW1PyFUeJngYjUstj27sGp4T4Jc4pump",
-      "sym": "$SNAPCAT",
-      "name": "LUKEY #4",
-      "ts": 1788890779673,
-      "usd": 0.000015666,
-      "liq": 2227.98
-    },
-    {
-      "mint": "7yuo3rN4f8ZqeSosyMfpSvxNRbEpWywr1QeNaKCXpump",
-      "sym": "$unshdc",
-      "name": "Sheep #5",
-      "ts": 1788890780044,
-      "usd": 0.00001519,
-      "liq": 2356.89
-    },
-    {
-      "mint": "APEHe7jmvva4W9xwR8jDnTqAfMPu7kFJ3UEEuFYjJSgY",
-      "sym": "$ZAPE",
-      "name": "Sheep #5",
-      "ts": 1788890780162,
-      "usd": 0.000021210000000000002,
-      "liq": 2163.06
-    },
-    {
-      "mint": "AoqBvbEFvjULnW1PyFUeJngYjUstj27sGp4T4Jc4pump",
-      "sym": "$SNAPCAT",
-      "name": "Sheep #5",
-      "ts": 1788890780343,
-      "usd": 0.000015666,
-      "liq": 2227.98
-    },
-    {
-      "mint": "6MMSL3XKUmBaCZ8mm1QPs1kkzyUT4wo1NcAf1Gqrpump",
-      "sym": "$pepebuild",
-      "name": "Pain #6",
-      "ts": 1788890781224,
-      "usd": 0.00002409,
-      "liq": 2626.89
-    },
-    {
-      "mint": "y3TiaZKjDip24Z1EppEqWBLhVH4K6kcE4Ss9q9wpump",
-      "sym": "$PMC",
-      "name": "Pain #6",
-      "ts": 1788890781780,
-      "usd": 0.00002045,
-      "liq": 2101.67
-    },
-    {
-      "mint": "HSGQ4z1RMHHoYsPcKewHhsoSw76vGwzvTjrKrBa7pump",
-      "sym": "$RXMR",
-      "name": "Jeets #7",
-      "ts": 1788890782131,
-      "usd": 3.012,
-      "liq": 0
-    },
-    {
-      "mint": "HHM7VGFhynnUPawxaEni5mGg5fSymgokHpM6VAJk8LcN",
-      "sym": "$Duve",
-      "name": "Jeets #7",
-      "ts": 1788890782515,
-      "usd": 3.0189999999999997,
-      "liq": 0
-    },
-    {
-      "mint": "AoqBvbEFvjULnW1PyFUeJngYjUstj27sGp4T4Jc4pump",
-      "sym": "$SNAPCAT",
-      "name": "Jeets #7",
-      "ts": 1788890782643,
-      "usd": 0.000015666,
-      "liq": 2227.98
-    },
-    {
-      "mint": "7yuo3rN4f8ZqeSosyMfpSvxNRbEpWywr1QeNaKCXpump",
-      "sym": "$unshdc",
-      "name": "Felix #10",
-      "ts": 1788890783394,
-      "usd": 0.00001519,
-      "liq": 2356.89
-    },
-    {
-      "mint": "7yuo3rN4f8ZqeSosyMfpSvxNRbEpWywr1QeNaKCXpump",
-      "sym": "$unshdc",
-      "name": "Felix #10",
-      "ts": 1788890783737,
-      "usd": 0.00000217,
-      "liq": 2356.89
-    },
-    {
-      "mint": "AoqBvbEFvjULnW1PyFUeJngYjUstj27sGp4T4Jc4pump",
-      "sym": "$SNAPCAT",
-      "name": "Felix #10",
-      "ts": 1788890783861,
-      "usd": 0.000015666,
-      "liq": 2227.98
-    },
     {
       "mint": "65RsPKE71vBa8QYM8qPAyDFb9KfCLPk8myVrTBYZpump",
       "sym": "$WeakAhh",
@@ -2765,6 +2632,126 @@
       "ts": 1788966439283,
       "usd": 0.0008006,
       "liq": 22708.41
+    },
+    {
+      "mint": "Ay5PeSxmDjtRLDFRMPXXZSzddxNY2LWL89U96Dhhpump",
+      "sym": "$NASHARK",
+      "name": "Doji #2",
+      "ts": 1788978641873,
+      "usd": 0.0006588,
+      "liq": 20186.83
+    },
+    {
+      "mint": "DnjxjnV5XTDKq9nMzrSPer7zKpvBmLgmd27iDwXApump",
+      "sym": "$Misanthropic",
+      "name": "Doji #2",
+      "ts": 1788978641989,
+      "usd": 10.217014746206395,
+      "liq": 0
+    },
+    {
+      "mint": "41QcW5nWZiLnLQWzwUTpH8hLmH899DcfCLj6MGJYpump",
+      "sym": "$PANSEM ",
+      "name": "Fox #3",
+      "ts": 1788978642312,
+      "usd": 0.001033,
+      "liq": 26208.78
+    },
+    {
+      "mint": "Ay5PeSxmDjtRLDFRMPXXZSzddxNY2LWL89U96Dhhpump",
+      "sym": "$NASHARK",
+      "name": "Fox #3",
+      "ts": 1788978642460,
+      "usd": 0.0006588,
+      "liq": 20186.83
+    },
+    {
+      "mint": "Ay5PeSxmDjtRLDFRMPXXZSzddxNY2LWL89U96Dhhpump",
+      "sym": "$NASHARK",
+      "name": "LUKEY #4",
+      "ts": 1788978643267,
+      "usd": 0.0006588,
+      "liq": 20186.83
+    },
+    {
+      "mint": "41QcW5nWZiLnLQWzwUTpH8hLmH899DcfCLj6MGJYpump",
+      "sym": "$PANSEM ",
+      "name": "Sheep #5",
+      "ts": 1788978643542,
+      "usd": 0.001033,
+      "liq": 26208.78
+    },
+    {
+      "mint": "Ay5PeSxmDjtRLDFRMPXXZSzddxNY2LWL89U96Dhhpump",
+      "sym": "$NASHARK",
+      "name": "Sheep #5",
+      "ts": 1788978643778,
+      "usd": 0.0006588,
+      "liq": 20186.83
+    },
+    {
+      "mint": "A5ZnCvZDeNdBoRgV8iw5fkuQBQuqNiwseiZoFvScpump",
+      "sym": "$ZFWOG",
+      "name": "Pain #6",
+      "ts": 1788978644151,
+      "usd": 0.0008866,
+      "liq": 24850.27
+    },
+    {
+      "mint": "41QcW5nWZiLnLQWzwUTpH8hLmH899DcfCLj6MGJYpump",
+      "sym": "$PANSEM ",
+      "name": "Pain #6",
+      "ts": 1788978644299,
+      "usd": 0.001033,
+      "liq": 26208.78
+    },
+    {
+      "mint": "Ay5PeSxmDjtRLDFRMPXXZSzddxNY2LWL89U96Dhhpump",
+      "sym": "$NASHARK",
+      "name": "Pain #6",
+      "ts": 1788978644446,
+      "usd": 0.0006588,
+      "liq": 20186.83
+    },
+    {
+      "mint": "9WzmDZ21GVz5kKfbtoY1WDYnqa7xyRDytStyJyxUpump",
+      "sym": "$BAMBOOK ",
+      "name": "Jeets #7",
+      "ts": 1788978644752,
+      "usd": 0.00002236,
+      "liq": 2232.82
+    },
+    {
+      "mint": "41QcW5nWZiLnLQWzwUTpH8hLmH899DcfCLj6MGJYpump",
+      "sym": "$PANSEM ",
+      "name": "Jeets #7",
+      "ts": 1788978644901,
+      "usd": 0.001033,
+      "liq": 26208.78
+    },
+    {
+      "mint": "Ay5PeSxmDjtRLDFRMPXXZSzddxNY2LWL89U96Dhhpump",
+      "sym": "$NASHARK",
+      "name": "Jeets #7",
+      "ts": 1788978645062,
+      "usd": 0.0006588,
+      "liq": 20186.83
+    },
+    {
+      "mint": "A5ZnCvZDeNdBoRgV8iw5fkuQBQuqNiwseiZoFvScpump",
+      "sym": "$ZFWOG",
+      "name": "Felix #10",
+      "ts": 1788978645471,
+      "usd": 0.0008866,
+      "liq": 24850.27
+    },
+    {
+      "mint": "Ay5PeSxmDjtRLDFRMPXXZSzddxNY2LWL89U96Dhhpump",
+      "sym": "$NASHARK",
+      "name": "Felix #10",
+      "ts": 1788978645767,
+      "usd": 0.0006588,
+      "liq": 20186.83
     }
   ],
   "lastDigest": "2026-09-08"
